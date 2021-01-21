@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import {
     StyledHeader, Navigation, Title, NavigationMenu, MenuItem, DivTitleWrapper,
@@ -18,12 +19,14 @@ const Header = () => {
         <StyledHeader id="header-component">
             <Navigation ref={ navigationRef }>
                 <DivTitleWrapper>
-                    <Title>Company Name</Title>
+                    <Title>
+                        <Link to="/">Company Name</Link>
+                    </Title>
                 </DivTitleWrapper>
 
                 <NavigationMenu height={ navigationRef.current.offsetHeight }>
                     <MenuItem>
-                        <span>Features</span>
+                        <Link to="/features">Features</Link>
                     </MenuItem>
                     <MenuItem>
                         <span>Boys</span>
@@ -47,7 +50,10 @@ const Header = () => {
 
                 <MobileNavigationMenu expanded={expanded}>
                     <MobileMenuItem>
-                        <span>Features</span>
+                        <Link
+                            to="/features"
+                            onClick={() => setExpand(false)}
+                        >Features</Link>
                     </MobileMenuItem>
                     <MobileMenuItem>
                         <span>Boys</span>

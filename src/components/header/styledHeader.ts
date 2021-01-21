@@ -29,11 +29,15 @@ export const DivTitleWrapper = styled.div`
 `;
 
 export const Title = styled.h2`
-    color: ${({ theme }) => theme.colors.white};
     padding: 16px;
     margin: 0px;
     width: fit-content;
     white-space: nowrap;
+
+    a {
+        color: ${({ theme }) => theme.colors.white};
+        text-decoration: none;
+    }
 `;
 
 export const NavigationMenu = styled.ul<NavigationMenuPropTypes>`
@@ -64,10 +68,16 @@ export const MenuItem = styled.li`
         background-color: ${({ theme }) => theme.colors.primaryHover};
     }
 
-    span {
+    span, a {
         color: white;
         text-transform: uppercase;
         font-size: 14px;
+        text-decoration: none;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex: 1;
+        height: 100%;
     }
 `;
 
@@ -84,7 +94,7 @@ export const MobileNavigationMenu = styled(NavigationMenu)<MobileNavigationMenuP
     padding: 0px;
 
     ${({ expanded }) => expanded && css`
-        span {
+        span, a {
             display: flex !important;
         }
     `}
