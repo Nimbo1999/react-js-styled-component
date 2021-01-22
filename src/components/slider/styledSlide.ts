@@ -3,9 +3,13 @@ import styled, { css } from 'styled-components';
 export const SlideShowContainer = styled.div`
     max-width: 100vw;
     position: relative;
-    max-height: 500px;
     width: 100%;
     height: 100%;
+    max-height: 300px;
+    
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+        max-height: 500px;
+    }
 `;
 
 interface SlideItemIterface {
