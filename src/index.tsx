@@ -10,7 +10,12 @@ import App from './App';
 import Theme, { GlobalStyle } from './assets/scss/theme';
 
 import reportWebVitals from './reportWebVitals';
-import './assets/scss/index.scss';
+
+import '../node_modules/bootstrap/dist/css/bootstrap-reboot.min.css';
+import '../node_modules/bootstrap/dist/css/bootstrap-grid.min.css';
+
+import '../node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css';
+import '../node_modules/@fortawesome/fontawesome-free/css/solid.min.css';
 
 ReactDOM.render(
   <React.StrictMode>

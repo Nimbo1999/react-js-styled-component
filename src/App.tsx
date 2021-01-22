@@ -20,7 +20,7 @@ function App() {
 
 			<Switch>
 				<Suspense fallback={<>Loading...</>}>
-					{publicRoutes.map(route => <Route {...route} />)}
+					{publicRoutes.map((route, index) => <Route {...route} key={ `route${index}` } />)}
 				</Suspense>
 			</Switch>
 			
