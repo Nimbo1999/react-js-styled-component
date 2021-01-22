@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 import {
-    SlideShowContainer, SlideItem, SlideCounter, Img, Text, SlideButtons,
-    DotsContainer, Dot
+    SlideShowContainer, SlideItem, Text, SlideButtons, DotsContainer,
+    Dot, SlideTitle
 } from './styledSlide';
 
 export interface Slide {
@@ -12,15 +12,17 @@ export interface Slide {
 
 interface Props {
 
-    slides: Array<Slide>
+    slides: Array<Slide>,
+    title?: string,
 
 };
 
-const Slider = ({ slides }: Props) => {
+const Slider = ({ title, slides }: Props) => {
     const [ slideIndex, setSlideIndex ] = useState(0);
 
     return (
         <SlideShowContainer>
+            <SlideTitle>{title}</SlideTitle>
 
             {slides.map((slide, index) => (
                 <SlideItem
@@ -28,8 +30,6 @@ const Slider = ({ slides }: Props) => {
                     active={ slideIndex === index }
                     style={{ backgroundImage: `url(${slide.img})` }}
                 >
-                    <SlideCounter>{`${index + 1} / ${slides.length}`}</SlideCounter>
-
                     <Text>{ slide.text }</Text>
                 </SlideItem>
             ))}

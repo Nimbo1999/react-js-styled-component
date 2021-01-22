@@ -1,5 +1,7 @@
 import Slider, { Slide } from '../../components/slider';
 
+import SaleContainer from '../../containers/sale';
+
 import Image1 from '../../assets/images/clothes.jpg';
 import Image2 from '../../assets/images/clothes2.jpg';
 import Image3 from '../../assets/images/clothes3.jpg';
@@ -33,6 +35,7 @@ const HomePage = ({}: Props) => {
     return (
         <>
             <Slider slides={slides} />
+            <SaleContainer />
         </>
     );
 }

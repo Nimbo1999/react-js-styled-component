@@ -10,6 +10,8 @@ const Theme: DefaultTheme = {
 
         white: '#fafafa',
 
+        bodyBg: '#F6F6F6',
+
     },
 
     fonts: {
@@ -44,6 +46,7 @@ export const GlobalStyle = createGlobalStyle`
         font-family: ${({ theme }) => theme.fonts.robotoFont};
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        background-color: ${({ theme }) => theme.colors.bodyBg}
     }
 `;
 

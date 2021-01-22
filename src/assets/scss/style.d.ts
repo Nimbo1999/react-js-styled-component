@@ -6,6 +6,7 @@ declare module 'styled-components' {
             primary: string,
             primaryHover: string,
             white: string,
+            bodyBg: string,
         },
 
         fonts: {
