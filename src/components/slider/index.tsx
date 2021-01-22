@@ -25,7 +25,7 @@ const Slider = ({ slides }: Props) => {
             {slides.map((slide, index) => (
                 <SlideItem
                     key={ slide.text }
-                    active={ index === slides.length - 1 }
+                    active={ slideIndex === index }
                     style={{ backgroundImage: `url(${slide.img})` }}
                 >
                     <SlideCounter>{`${index + 1} / ${slides.length}`}</SlideCounter>
@@ -35,22 +35,22 @@ const Slider = ({ slides }: Props) => {
             ))}
 
             <SlideButtons onClick={() => {
-                if (slideIndex === slides.length) {
-                    setSlideIndex(0);
+                if (slideIndex === 0) {
+                    setSlideIndex(slides.length - 1);
                     return;
                 }
-                setSlideIndex(slideIndex + 1);
+                setSlideIndex(slideIndex - 1);
             }}>
                 <i className="fas fa-angle-left" />
             </SlideButtons>
 
             <SlideButtons
             onClick={() => {
-                if (slideIndex === 0) {
-                    setSlideIndex(slides.length - 1);
+                if (slideIndex === slides.length -1 ) {
+                    setSlideIndex(0);
                     return;
                 }
-                setSlideIndex(slideIndex - 1);
+                setSlideIndex(slideIndex + 1);
             }}
                 right
             >
@@ -59,7 +59,12 @@ const Slider = ({ slides }: Props) => {
 
             <DotsContainer>
 
-                {slides.map((_, index) => <Dot  key={ _.text }onClick={() => setSlideIndex(index)} />)}
+                {slides.map((_, index) => (<Dot
+                        key={ _.text }
+                        onClick={() => setSlideIndex(index)}
+                        active={slideIndex === index}
+                    />)
+                )}
 
             </DotsContainer>
         </SlideShowContainer>
