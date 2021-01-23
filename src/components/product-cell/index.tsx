@@ -1,5 +1,5 @@
 import {
-    ProductCellWrapper, CurrentPrice, LastPrice, Row, PName, PDescription, Img
+    ProductCellWrapper, CurrentPrice, LastPrice, Row, PName, PDescription, ImageDiv
  } from './styledProductCell';
 
 interface Props {
@@ -15,9 +15,8 @@ const ProductCell = ({ image, price, discountprice, name, description }:Props) =
     // Use the male photos directory at assets to mock the images.
     return (
         <ProductCellWrapper>
-            <div>
-                <Img src={ image } />
-            </div>
+            <ImageDiv style={{ backgroundImage: `url(${image})` }} />
+
             <Row>
                 {discountprice
                     ? (<>
@@ -27,7 +26,9 @@ const ProductCell = ({ image, price, discountprice, name, description }:Props) =
                         <CurrentPrice>{price.toLocaleString('pt-BR', {currency: 'BRL', style: 'currency'})}</CurrentPrice>
                     ) }
             </Row>
+
             <PName>{name}</PName>
+
             <PDescription>{description}</PDescription>
         </ProductCellWrapper>
     );

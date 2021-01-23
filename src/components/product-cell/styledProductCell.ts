@@ -39,10 +39,14 @@ export const PName = styled.p`
 
 export const PDescription = styled.small`
     padding: 0px 12px 12px;
-    display: ${({ children }) => children ? 'block' : 'none'}
-
+    display: ${({ children }) => children ? 'block' : 'none'};
 `;
 
-export const Img = styled.img`
+export const ImageDiv = styled.div`
+    max-height: 162px;
+    height: 162px;
     width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 `;
