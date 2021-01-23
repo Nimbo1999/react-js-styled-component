@@ -67,9 +67,9 @@ export const SlideButtons = styled.button<SlideButtonInterface>`
     position: absolute;
     appearance: none;
     cursor: pointer;
-    top: 25%;
+    top: 35%;
     width: auto;
-    height: 50%;
+    height: 25%;
     padding: 8px;
     color: ${({ theme }) => theme.colors.white};
     font-weight: bold;
@@ -77,8 +77,8 @@ export const SlideButtons = styled.button<SlideButtonInterface>`
     border-radius: 0 10px 10px 0;
     user-select: none;
     transition: 0.6s ease;
-    background-color: rgba(0,0,0,0.8);
-    border-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.4);
+    border-color: rgba(0, 0, 0, 0.15);
 
     ${({ right }) => right && css`
         right: 0;
@@ -103,8 +103,8 @@ export const SlideButtons = styled.button<SlideButtonInterface>`
         border-color: transparent;
 
         ${SlideShowContainer}:hover & {
-            background-color: rgba(0,0,0,0.8);
-            border-color: rgba(0, 0, 0, 0.4);
+            background-color: rgba(0,0,0,0.4);
+            border-color: rgba(0, 0, 0, 0.15);
         }
 
         i {
