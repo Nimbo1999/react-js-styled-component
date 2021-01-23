@@ -92,6 +92,7 @@ export const MobileNavigationMenu = styled(NavigationMenu)<MobileNavigationMenuP
     transition: max-height 200ms ease-in-out;
     overflow: hidden;
     padding: 0px;
+    z-index: 1;
 
     ${({ expanded }) => expanded && css`
         span, a {
