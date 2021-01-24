@@ -1,9 +1,13 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const ProductCellWrapper = styled.div`
+interface SmallProps {
+    small?: boolean,
+}
+
+export const ProductCellWrapper = styled.div<SmallProps>`
     background-color: #E8F0F8;
-    flex: 1 0 260px;
-    max-width: 260px;
+    flex: 1 0 ${({ small }) => small ? `145px` : '260px' };
+    max-width: ${({ small }) => small ? `145px` : '260px' };
     margin-left: 16px;
 
     &:first-child {
@@ -11,19 +15,32 @@ export const ProductCellWrapper = styled.div`
     }
 `;
 
-export const Row = styled.div`
+interface InvertedInterface {
+    inverted?: boolean,
+}
+
+export const Row = styled.div<InvertedInterface>`
     display: flex;
     justify-content: flex-start;
     margin-top: .5em;
     align-items: center;
     padding: 0px 12px;
     width: 100%;
+
+    ${({ inverted }) => inverted && css`
+        padding: 0px 6px 8px;
+        margin-top: 0px;
+    `}
 `;
 
-export const CurrentPrice = styled.span`
+export const CurrentPrice = styled.span<InvertedInterface>`
     margin-right: 8px;
     font-weight: bold;
     font-size: 16px;
+
+    ${({ inverted }) => inverted && css`
+        font-size: 14px;
+    `}
 `;
 
 export const LastPrice = styled.span`
@@ -31,10 +48,13 @@ export const LastPrice = styled.span`
     text-decoration: line-through;
 `;
 
-export const PName = styled.p`
+export const PName = styled.p<InvertedInterface>`
     padding: 8px 12px;
     margin: 0px;
-
+    ${({ inverted }) => inverted && css`
+        font-size: 14px;
+        padding: 4px 6px;
+    `}
 `;
 
 export const PDescription = styled.small`
@@ -42,9 +62,9 @@ export const PDescription = styled.small`
     display: ${({ children }) => children ? 'block' : 'none'};
 `;
 
-export const ImageDiv = styled.div`
-    max-height: 162px;
-    height: 162px;
+export const ImageDiv = styled.div<SmallProps>`
+    max-height: ${({ small }) => small ? '145px' : '162px'};
+    height: ${({ small }) => small ? '145px' : '162px'};
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;

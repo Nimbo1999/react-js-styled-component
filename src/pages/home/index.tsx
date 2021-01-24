@@ -1,6 +1,7 @@
 import Slider, { Slide } from '../../components/slider';
 
 import SaleContainer from '../../containers/sale';
+import MostWanted from '../../containers/mostWanted';
 
 import Image1 from '../../assets/images/clothes.jpg';
 import Image2 from '../../assets/images/clothes2.jpg';
@@ -36,6 +37,7 @@ const HomePage = ({}: Props) => {
         <>
             <Slider slides={slides} />
             <SaleContainer />
+            <MostWanted />
         </>
     );
 }
