@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import {
     SlideShowContainer, SlideItem, Text, SlideButtons, DotsContainer,
@@ -19,6 +19,20 @@ interface Props {
 
 const Slider = ({ title, slides }: Props) => {
     const [ slideIndex, setSlideIndex ] = useState(0);
+
+    const nextStep = () => {
+        if (slideIndex === slides.length -1 ) {
+            setSlideIndex(0);
+            return;
+        }
+        setSlideIndex(slideIndex + 1);
+    }
+
+    useEffect(() => {
+        setTimeout(() => {
+            nextStep();
+        }, 4000);
+    }, [slideIndex]);
 
     return (
         <SlideShowContainer>
@@ -44,16 +58,7 @@ const Slider = ({ title, slides }: Props) => {
                 <i className="fas fa-angle-left" />
             </SlideButtons>
 
-            <SlideButtons
-            onClick={() => {
-                if (slideIndex === slides.length -1 ) {
-                    setSlideIndex(0);
-                    return;
-                }
-                setSlideIndex(slideIndex + 1);
-            }}
-                right
-            >
+            <SlideButtons onClick={nextStep} right>
                 <i className="fas fa-angle-right" />
             </SlideButtons>
 
