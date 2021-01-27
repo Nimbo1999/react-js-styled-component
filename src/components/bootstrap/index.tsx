@@ -3,11 +3,25 @@ interface BasicComponentsProps {
     className?: string,
 }
 
-export const Row = ({ className, children }: BasicComponentsProps) => {
+type JustifyContent = 'justify-content-start' | 'justify-content-center' |
+'justify-content-end' | 'justify-content-between' | 'justify-content-around'|
+'justify-content-evenly';
+
+type AlignItens = 'align-items-start' | 'align-items-end' |
+'align-items-center' | 'align-items-baseline' | 'align-items-stretch';
+
+interface RowProps extends BasicComponentsProps {
+    justifyContent?: JustifyContent,
+    alignItens?: AlignItens,
+}
+
+export const Row = ({ className, children, justifyContent, alignItens }: RowProps) => {
 
     const cssClasses = ['row'];
 
-    if(className) cssClasses.push(className);
+    if (className) cssClasses.push(className);
+    if (justifyContent) cssClasses.push(justifyContent);
+    if (alignItens) cssClasses.push(alignItens);
 
     return (
         <div className={ cssClasses.join(' ') }>

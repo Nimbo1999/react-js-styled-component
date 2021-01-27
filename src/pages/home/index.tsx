@@ -4,6 +4,7 @@ import { HomePageContainer } from './styledHome';
 import SaleContainer from '../../containers/sale';
 import MostWanted from '../../containers/mostWanted';
 import Categories from '../../containers/categories';
+import ClientsOpinions from '../../containers/clientsOpinions';
 
 import Image1 from '../../assets/images/clothes.jpg';
 import Image2 from '../../assets/images/clothes2.jpg';
@@ -40,7 +41,8 @@ const HomePage = ({}: Props) => {
             <Slider slides={slides} />
             <SaleContainer />
             <MostWanted />
-            <Categories/>
+            <Categories />
+            <ClientsOpinions />
         </HomePageContainer>
     );
 }
