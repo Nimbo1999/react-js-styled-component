@@ -8,7 +8,15 @@ type MobileNavigationMenuPropTypes = {
     expanded: boolean
 }
 
-export const StyledHeader = styled.div``;
+export const StyledHeader = styled.div`
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+
+    @media screen and ( min-width: ${({ theme }) => theme.breakpoints.md} ) {
+        position: relative;
+    }
+`;
 
 export const Navigation = styled.nav`
     background-color: ${({ theme }) => theme.colors.primary};

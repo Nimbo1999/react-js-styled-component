@@ -1,5 +1,6 @@
 import Slider, { Slide } from '../../components/slider';
 
+import { HomePageContainer } from './styledHome';
 import SaleContainer from '../../containers/sale';
 import MostWanted from '../../containers/mostWanted';
 import Categories from '../../containers/categories';
@@ -35,12 +36,12 @@ const HomePage = ({}: Props) => {
     ];
 
     return (
-        <>
+        <HomePageContainer>
             <Slider slides={slides} />
             <SaleContainer />
             <MostWanted />
             <Categories/>
-        </>
+        </HomePageContainer>
     );
 }
 
