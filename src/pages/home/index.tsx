@@ -5,6 +5,7 @@ import SaleContainer from '../../containers/sale';
 import MostWanted from '../../containers/mostWanted';
 import Categories from '../../containers/categories';
 import ClientsOpinions from '../../containers/clientsOpinions';
+import Partners from '../../containers/partners';
 
 import Image1 from '../../assets/images/clothes.jpg';
 import Image2 from '../../assets/images/clothes2.jpg';
@@ -43,6 +44,7 @@ const HomePage = ({}: Props) => {
             <MostWanted />
             <Categories />
             <ClientsOpinions />
+            <Partners />
         </HomePageContainer>
     );
 }
